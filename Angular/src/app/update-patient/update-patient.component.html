@@ -1,0 +1,60 @@
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+    <a style="color:white;" class="navbar-brand" routerLink="/docdash">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="togglenavigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <span class="navbar-toggler-icon"></span>
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link-active" aria-current="page" href="javascript:void(0);" routerLink="/doctor">Back</a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+
+
+<div class="container">
+<form (ngSubmit)="onSubmit()">
+    
+      <legend class="text-center m-4">Add the Information of Patient</legend>
+      <div class="col-6 mx-auto">
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter First Name</label>
+        <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="patient.firstName" placeholder="Firstname">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Last Name</label>
+        <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="patient.lastName" placeholder="Lastname">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Age</label>
+        <input type="text" id="age" name="age" class="form-control" [(ngModel)]="patient.age" placeholder="Age">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Blood Group</label>
+        <input type="text" id="blood" name="blood" class="form-control" [(ngModel)]="patient.blood" placeholder="Symtomps">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Prescription</label>
+        <input type="text" id="prescription" name="prescription" class="form-control" [(ngModel)]="patient.prescription" placeholder="Mobile">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Dose</label>
+        <input type="text" id="dose" name="dose" class="form-control" [(ngModel)]="patient.dose" placeholder="Mobile">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Fees</label>
+        <input type="text" id="fees" name="fees" class="form-control" [(ngModel)]="patient.fees" placeholder="Mobile">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Urgency</label>
+        <input type="text" id="urgency" name="urgency" class="form-control" [(ngModel)]="patient.urgency" placeholder="Mobile">
+      </div>
+      
+      <div class="col-3 mx-auto">
+      <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+    </div>
+    </div>
+  </form>
+</div>

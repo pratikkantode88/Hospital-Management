@@ -1,0 +1,37 @@
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+    <a style="color:white;" class="navbar-brand" routerLink="/docdash">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="togglenavigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <span class="navbar-toggler-icon"></span>
+      <li class="nav-item">
+        <a style="color: white;" class="nav-link-active" aria-current="page" href="javascript:void(0);" routerLink="/view-medicine">Back</a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+
+
+<div class="container">
+<form (ngSubmit)="onSubmit()">
+    
+      <legend class="text-center m-4">Add the Information of Medicine</legend>
+      <div class="col-6 mx-auto">
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Drug Name</label>
+        <input type="text" id="drugName" name="drugName" class="form-control" [(ngModel)]="medicine.drugName" placeholder="Firstname">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Enter Stock</label>
+        <input type="text" id="stock" name="stock" class="form-control" [(ngModel)]="medicine.stock" placeholder="Lastname">
+      </div>
+      
+      
+      <div class="col-3 mx-auto">
+      <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+    </div>
+    </div>
+  </form>
+</div>

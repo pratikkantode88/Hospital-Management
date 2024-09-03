@@ -1,0 +1,59 @@
+<div>
+    <nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+      <a style="color:white;" class="navbar-brand" routerLink="/docdash">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="togglenavigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <span class="navbar-toggler-icon"></span>
+        <li class="nav-item">
+          <a style="color: white;" class="nav-link-active" aria-current="page" href="javascript:void(0);" routerLink="/doctor">Back Home</a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+    <div class="container">
+    <hr>
+      <h2 style="text-align: center; margin-top: 20px;" class="fw-bold">Medicines </h2>
+    <a style="color: rgb(86, 86, 86); font-size: x-large;">
+      <marquee behavior="scroll" direction="left" loop="" mb-2>
+         Welcome to medicine Dashboard.Please find the Medicine List below!!.Click Add Medicine to add new Medicine...
+      </marquee>
+    </a>
+    <hr>
+    <a style="color: rgb(86, 86, 86); font-size: x-large;">Current Medicine List in the Queue</a>
+    
+    
+    
+    <table class="table table-success table-striped table-bordered shadow">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Drug Name</th>
+            <th scope="col">number of Stock</th>
+            <th scope="col">Action</th>  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let medicine of medicines">
+            
+            <td>{{medicine.id}}</td>
+            <td>{{medicine.drugName}}</td>
+            <td>{{medicine.stock}}</td>
+            <td>
+                <button class="btn btn-success" (click)="update(medicine.id)">Update</button>
+                <button class="btn btn-danger m-2" (click)="delete(medicine.id)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+            <div class="col-3 mx-auto">
+              <button class="btn btn-primary " type="button" routerLink="/add-medicine">Add Medicine</button>
+            </div>
+          
+          
+        
+      
+       </div>

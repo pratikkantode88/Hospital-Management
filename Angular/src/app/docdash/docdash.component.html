@@ -1,0 +1,65 @@
+<nav style="margin:auto" class="navbar navbar-expand-lg bg-dark">
+    <a style="color:white;" class="navbar-brand" routerLink="/home">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="togglenavigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         
+          <li class="nav-item">
+            <a style="color: white;" class="nav-link-active" aria-current="page" href="javascript:void(0);" routerLink="/view-medicine">View Medicines</a>
+         </li>
+        </ul>
+       
+       </div>
+      
+</nav>
+<div class="container">
+<hr>
+    <h2 style="text-align: center; margin-top: 20px;" class="fw-bold">Doctor Dashboard</h2>
+  <a style="color: rgb(86, 86, 86); font-size: x-large;">
+    <marquee behavior="scroll" direction="left" loop="" mb-2>
+       Welcome to Doctor Dashboard.Please find the patient List below!!.
+    </marquee>
+  </a>
+<hr>
+<a style="color: rgb(86, 86, 86); font-size: x-large;">Current Patient List in the Queue</a>
+
+<div class="tableFixHead">
+  <br>
+
+<table class="table table-success table-striped table-bordered shadow">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Blood Group</th>
+            <th scope="col">urgency</th>
+            <th scope="col">Action</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of patients">
+            
+            <td>{{patient.id}}</td>
+            <td>{{patient.firstName}}</td>
+            <td>{{patient.lastName}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.blood}}</td>
+            <td>{{patient.urgency}}</td>
+             <td>
+              <button class="btn btn-info" type="button" (click)="updatePatient(patient.id)">Update</button>
+              <button class="btn btn-success m-2" type="button" (click)="viewPatient(patient.id)">View</button>
+              <button class="btn btn-danger m-2" type="button" (click)="deletePatient(patient.id)">Delete</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <div class="col-3 mx-auto">
+        <button class="btn btn-primary " type="button" routerLink="/add-patient">Add Patient</button>
+      </div>
+  </div>
+</div>
